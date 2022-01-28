@@ -1,0 +1,9 @@
+Architecture: amd64
+Description: bulk built using CMake
+Maintainer: example@example.com
+Package: bulk
+Priority: optional
+Section: devel
+Version: 0.0.1
+Installed-Size: 263
+

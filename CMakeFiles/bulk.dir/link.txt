@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/bulk.dir/src/main.cpp.o CMakeFiles/bulk.dir/src/command/Cmd.cpp.o CMakeFiles/bulk.dir/src/command/MacroCmd.cpp.o CMakeFiles/bulk.dir/src/command_queue/CmdQueue.cpp.o CMakeFiles/bulk.dir/src/logger/ConsoleLogger.cpp.o CMakeFiles/bulk.dir/src/logger/FileLogger.cpp.o -o bulk  libbulk_lib.a 
