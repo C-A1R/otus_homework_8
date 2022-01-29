@@ -6,6 +6,8 @@
 
 #include <ctime>
 
+#include <iostream>
+
 
 CmdQueue::CmdQueue(size_t blockSize) : _blockSize(blockSize)
 {
@@ -114,10 +116,9 @@ void CmdQueue::execCommands()
         }
     }
 
-    for (const auto &w : _loggers)
+    for (const auto &l : _loggers)
     {
-        w->setCreateBlockTime(_createBlockTime);
-        w->write(bulkStr);
+        l->pushLog(_createBlockTime, bulkStr);
     }
     _createBlockTime = 0;
 }

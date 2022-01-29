@@ -2,19 +2,16 @@
 
 #include <fstream>
 
-void FileLogger::write(const std::string &text)
+
+void FileLogger::pushLog(const time_t &time, const std::string &log) 
 {
-    if (_filename.empty() || text.empty())
+    _filename = "bulk" + std::to_string(time) + ".log";
+    if (_filename.empty() || log.empty())
     {
         return;
     }
     std::ofstream outfile(_filename);
-    outfile << text << std::endl;
+    outfile << log << std::endl;
     outfile.close();
     _filename.clear();
-}
-
-void FileLogger::setCreateBlockTime(const time_t &time) 
-{
-    _filename = "bulk" + std::to_string(time) + ".log";
 }

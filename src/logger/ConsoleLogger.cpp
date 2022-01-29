@@ -2,17 +2,48 @@
 #include "ConsoleLogger.h"
 
 #include <iostream>
-#include <thread>
 
 ConsoleLogger::ConsoleLogger()
 {
+    _thread = std::thread(&ConsoleLogger::worker, this);
 }
 
-void ConsoleLogger::write(const std::string &text) 
+ConsoleLogger::~ConsoleLogger()
 {
-    std::cout << text << std::endl;
+    _stoped = true;
+    _cv.notify_one();
+    _thread.join();
 }
 
-void ConsoleLogger::setCreateBlockTime(const time_t &)
-{    
+void ConsoleLogger::pushLog(const time_t &, const std::string &log) 
+{
+    {
+        std::lock_guard<std::mutex> lock(_mtx);
+        _logs.push(log);
+    }
+    _cv.notify_one();
+}
+
+void ConsoleLogger::worker() 
+{
+    auto printNext = [this]()
+    {
+        std::cout << _logs.front() << std::endl;
+        _logs.pop();
+    };
+
+    while (!_stoped)
+    {
+        std::unique_lock<std::mutex> lock(_mtx);
+        _cv.wait(lock, [this]() { return !_logs.empty(); });
+        if (_stoped)
+        {
+            break;
+        }
+        printNext();
+    }
+    while (!_logs.empty())
+    {
+        printNext();
+    }
 }
