@@ -10,6 +10,8 @@ class ICommand;
 class MacroCmd;
 class ILogger;
 
+class ConsoleLogger;
+
 /**
  * @brief Очередь команд
  */

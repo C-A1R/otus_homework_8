@@ -8,8 +8,7 @@ class FileLogger : public ILogger
     std::string _filename;
 public:
     FileLogger() = default;
-    void write(const std::string &) override;
-    void setCreateBlockTime(const time_t &time) override;
+    void pushLog(const time_t &time, const std::string &log) override;
 };
 
 #endif //FILELOGGER_H

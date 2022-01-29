@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">bulk
-   &#160;<span id="projectnumber">0.0.1</span>
+   &#160;<span id="projectnumber">0.0.2</span>
    </div>
    <div id="projectbrief">Пакетная обработка команд</div>
   </td>
@@ -76,21 +76,36 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ILogger_8h.html">ILogger.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classConsoleLogger.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classConsoleLogger.html">ConsoleLogger</a> : <span class="keyword">public</span> <a class="code" href="classILogger.html">ILogger</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="classConsoleLogger.html#a5dc25889c50a89a91bce5b1d4f3dd46a">ConsoleLogger</a>();</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classConsoleLogger.html#a667597059a7f6217252c0b42ca944111">write</a>(<span class="keyword">const</span> std::string &amp;text) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classConsoleLogger.html#a19aa8d5fc46173c2c0e66a4c12223f35">setCreateBlockTime</a>(<span class="keyword">const</span> time_t &amp;) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;};</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif //CONSOLELOGGER_H</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;condition_variable&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;atomic&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classConsoleLogger.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classConsoleLogger.html">ConsoleLogger</a> : <span class="keyword">public</span> <a class="code" href="classILogger.html">ILogger</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::condition_variable _cv;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    std::mutex _mtx;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::queue&lt;std::string&gt; _logs;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    std::thread _thread;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::atomic&lt;bool&gt; _stoped {<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classConsoleLogger.html#a5dc25889c50a89a91bce5b1d4f3dd46a">ConsoleLogger</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classConsoleLogger.html#a242e88aa9495249d5a7fbdfc4f8886ee">~ConsoleLogger</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classConsoleLogger.html#a341448de0ab2414d81e2f9b019a9d04d">pushLog</a>(<span class="keyword">const</span> time_t &amp;, <span class="keyword">const</span> std::string &amp;log) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> worker();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif //CONSOLELOGGER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassConsoleLogger_html"><div class="ttname"><a href="classConsoleLogger.html">ConsoleLogger</a></div><div class="ttdef"><b>Definition:</b> ConsoleLogger.h:6</div></div>
-<div class="ttc" id="aclassConsoleLogger_html_a19aa8d5fc46173c2c0e66a4c12223f35"><div class="ttname"><a href="classConsoleLogger.html#a19aa8d5fc46173c2c0e66a4c12223f35">ConsoleLogger::setCreateBlockTime</a></div><div class="ttdeci">void setCreateBlockTime(const time_t &amp;) override</div><div class="ttdef"><b>Definition:</b> ConsoleLogger.cpp:16</div></div>
-<div class="ttc" id="aclassConsoleLogger_html_a667597059a7f6217252c0b42ca944111"><div class="ttname"><a href="classConsoleLogger.html#a667597059a7f6217252c0b42ca944111">ConsoleLogger::write</a></div><div class="ttdeci">void write(const std::string &amp;text) override</div><div class="ttdef"><b>Definition:</b> ConsoleLogger.cpp:11</div></div>
+<div class="ttc" id="aclassConsoleLogger_html_a341448de0ab2414d81e2f9b019a9d04d"><div class="ttname"><a href="classConsoleLogger.html#a341448de0ab2414d81e2f9b019a9d04d">ConsoleLogger::pushLog</a></div><div class="ttdeci">void pushLog(const time_t &amp;, const std::string &amp;log) override</div><div class="ttdef"><b>Definition:</b> ConsoleLogger.cpp:18</div></div>
+<div class="ttc" id="aclassConsoleLogger_html"><div class="ttname"><a href="classConsoleLogger.html">ConsoleLogger</a></div><div class="ttdef"><b>Definition:</b> ConsoleLogger.h:12</div></div>
 <div class="ttc" id="aclassILogger_html"><div class="ttname"><a href="classILogger.html">ILogger</a></div><div class="ttdef"><b>Definition:</b> ILogger.h:6</div></div>
-<div class="ttc" id="aclassConsoleLogger_html_a5dc25889c50a89a91bce5b1d4f3dd46a"><div class="ttname"><a href="classConsoleLogger.html#a5dc25889c50a89a91bce5b1d4f3dd46a">ConsoleLogger::ConsoleLogger</a></div><div class="ttdeci">ConsoleLogger()</div><div class="ttdef"><b>Definition:</b> ConsoleLogger.cpp:7</div></div>
+<div class="ttc" id="aclassConsoleLogger_html_a5dc25889c50a89a91bce5b1d4f3dd46a"><div class="ttname"><a href="classConsoleLogger.html#a5dc25889c50a89a91bce5b1d4f3dd46a">ConsoleLogger::ConsoleLogger</a></div><div class="ttdeci">ConsoleLogger()</div><div class="ttdef"><b>Definition:</b> ConsoleLogger.cpp:6</div></div>
+<div class="ttc" id="aclassConsoleLogger_html_a242e88aa9495249d5a7fbdfc4f8886ee"><div class="ttname"><a href="classConsoleLogger.html#a242e88aa9495249d5a7fbdfc4f8886ee">ConsoleLogger::~ConsoleLogger</a></div><div class="ttdeci">~ConsoleLogger()</div><div class="ttdef"><b>Definition:</b> ConsoleLogger.cpp:11</div></div>
 <div class="ttc" id="aILogger_8h_html"><div class="ttname"><a href="ILogger_8h.html">ILogger.h</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -532,7 +532,30 @@ CMakeFiles/bulk.dir/src/command_queue/CmdQueue.cpp.o: src/command_queue/CmdQueue
   src/command/ICommand.h \
   src/command/MacroCmd.h \
   src/logger/ILogger.h \
-  /usr/include/c++/9/ctime
+  /usr/include/c++/9/ctime \
+  /usr/include/c++/9/iostream \
+  /usr/include/c++/9/ostream \
+  /usr/include/c++/9/ios \
+  /usr/include/c++/9/bits/ios_base.h \
+  /usr/include/c++/9/bits/locale_classes.h \
+  /usr/include/c++/9/bits/locale_classes.tcc \
+  /usr/include/c++/9/system_error \
+  /usr/include/x86_64-linux-gnu/c++/9/bits/error_constants.h \
+  /usr/include/c++/9/streambuf \
+  /usr/include/c++/9/bits/streambuf.tcc \
+  /usr/include/c++/9/bits/basic_ios.h \
+  /usr/include/c++/9/bits/locale_facets.h \
+  /usr/include/c++/9/cwctype \
+  /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+  /usr/include/x86_64-linux-gnu/c++/9/bits/ctype_base.h \
+  /usr/include/c++/9/bits/streambuf_iterator.h \
+  /usr/include/x86_64-linux-gnu/c++/9/bits/ctype_inline.h \
+  /usr/include/c++/9/bits/locale_facets.tcc \
+  /usr/include/c++/9/bits/basic_ios.tcc \
+  /usr/include/c++/9/bits/ostream.tcc \
+  /usr/include/c++/9/istream \
+  /usr/include/c++/9/bits/istream.tcc
 
 CMakeFiles/bulk.dir/src/logger/ConsoleLogger.cpp.o: src/logger/ConsoleLogger.cpp \
   /usr/include/stdc-predef.h \
@@ -687,15 +710,58 @@ CMakeFiles/bulk.dir/src/logger/ConsoleLogger.cpp.o: src/logger/ConsoleLogger.cpp
   /usr/include/asm-generic/errno-base.h \
   /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
   /usr/include/c++/9/bits/basic_string.tcc \
+  /usr/include/c++/9/condition_variable \
+  /usr/include/c++/9/chrono \
+  /usr/include/c++/9/ratio \
+  /usr/include/c++/9/ctime \
+  /usr/include/c++/9/bits/parse_numbers.h \
+  /usr/include/c++/9/bits/std_mutex.h \
+  /usr/include/c++/9/system_error \
+  /usr/include/x86_64-linux-gnu/c++/9/bits/error_constants.h \
+  /usr/include/c++/9/stdexcept \
+  /usr/include/c++/9/bits/unique_lock.h \
+  /usr/include/c++/9/ext/concurrence.h \
+  /usr/include/c++/9/bits/unique_ptr.h \
+  /usr/include/c++/9/utility \
+  /usr/include/c++/9/bits/stl_relops.h \
+  /usr/include/c++/9/tuple \
+  /usr/include/c++/9/array \
+  /usr/include/c++/9/bits/uses_allocator.h \
+  /usr/include/c++/9/bits/invoke.h \
+  /usr/include/c++/9/bits/shared_ptr.h \
+  /usr/include/c++/9/bits/shared_ptr_base.h \
+  /usr/include/c++/9/bits/allocated_ptr.h \
+  /usr/include/c++/9/bits/refwrap.h \
+  /usr/include/c++/9/ext/aligned_buffer.h \
+  /usr/include/c++/9/queue \
+  /usr/include/c++/9/deque \
+  /usr/include/c++/9/bits/stl_construct.h \
+  /usr/include/c++/9/bits/stl_uninitialized.h \
+  /usr/include/c++/9/bits/stl_deque.h \
+  /usr/include/c++/9/bits/deque.tcc \
+  /usr/include/c++/9/vector \
+  /usr/include/c++/9/bits/stl_vector.h \
+  /usr/include/c++/9/bits/stl_bvector.h \
+  /usr/include/c++/9/bits/vector.tcc \
+  /usr/include/c++/9/bits/stl_heap.h \
+  /usr/include/c++/9/bits/stl_queue.h \
+  /usr/include/c++/9/thread \
+  /usr/include/c++/9/memory \
+  /usr/include/c++/9/bits/stl_tempbuf.h \
+  /usr/include/c++/9/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/9/bits/shared_ptr_atomic.h \
+  /usr/include/c++/9/bits/atomic_base.h \
+  /usr/include/c++/9/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/9/backward/auto_ptr.h \
+  /usr/include/c++/9/pstl/glue_memory_defs.h \
+  /usr/include/c++/9/pstl/execution_defs.h \
+  /usr/include/c++/9/atomic \
   /usr/include/c++/9/iostream \
   /usr/include/c++/9/ostream \
   /usr/include/c++/9/ios \
   /usr/include/c++/9/bits/ios_base.h \
   /usr/include/c++/9/bits/locale_classes.h \
   /usr/include/c++/9/bits/locale_classes.tcc \
-  /usr/include/c++/9/system_error \
-  /usr/include/x86_64-linux-gnu/c++/9/bits/error_constants.h \
-  /usr/include/c++/9/stdexcept \
   /usr/include/c++/9/streambuf \
   /usr/include/c++/9/bits/streambuf.tcc \
   /usr/include/c++/9/bits/basic_ios.h \
@@ -710,36 +776,7 @@ CMakeFiles/bulk.dir/src/logger/ConsoleLogger.cpp.o: src/logger/ConsoleLogger.cpp
   /usr/include/c++/9/bits/basic_ios.tcc \
   /usr/include/c++/9/bits/ostream.tcc \
   /usr/include/c++/9/istream \
-  /usr/include/c++/9/bits/istream.tcc \
-  /usr/include/c++/9/thread \
-  /usr/include/c++/9/chrono \
-  /usr/include/c++/9/ratio \
-  /usr/include/c++/9/ctime \
-  /usr/include/c++/9/bits/parse_numbers.h \
-  /usr/include/c++/9/memory \
-  /usr/include/c++/9/bits/stl_construct.h \
-  /usr/include/c++/9/bits/stl_uninitialized.h \
-  /usr/include/c++/9/utility \
-  /usr/include/c++/9/bits/stl_relops.h \
-  /usr/include/c++/9/bits/stl_tempbuf.h \
-  /usr/include/c++/9/bits/stl_raw_storage_iter.h \
-  /usr/include/c++/9/ext/concurrence.h \
-  /usr/include/c++/9/bits/uses_allocator.h \
-  /usr/include/c++/9/bits/unique_ptr.h \
-  /usr/include/c++/9/tuple \
-  /usr/include/c++/9/array \
-  /usr/include/c++/9/bits/invoke.h \
-  /usr/include/c++/9/bits/shared_ptr.h \
-  /usr/include/c++/9/bits/shared_ptr_base.h \
-  /usr/include/c++/9/bits/allocated_ptr.h \
-  /usr/include/c++/9/bits/refwrap.h \
-  /usr/include/c++/9/ext/aligned_buffer.h \
-  /usr/include/c++/9/bits/shared_ptr_atomic.h \
-  /usr/include/c++/9/bits/atomic_base.h \
-  /usr/include/c++/9/bits/atomic_lockfree_defines.h \
-  /usr/include/c++/9/backward/auto_ptr.h \
-  /usr/include/c++/9/pstl/glue_memory_defs.h \
-  /usr/include/c++/9/pstl/execution_defs.h
+  /usr/include/c++/9/bits/istream.tcc
 
 CMakeFiles/bulk.dir/src/logger/FileLogger.cpp.o: src/logger/FileLogger.cpp \
   /usr/include/stdc-predef.h \
@@ -1118,6 +1155,17 @@ CMakeFiles/bulk.dir/src/main.cpp.o: src/main.cpp \
   /usr/include/c++/9/bits/stl_stack.h \
   src/logger/ConsoleLogger.h \
   src/logger/ILogger.h \
+  /usr/include/c++/9/condition_variable \
+  /usr/include/c++/9/chrono \
+  /usr/include/c++/9/ratio \
+  /usr/include/c++/9/ctime \
+  /usr/include/c++/9/bits/parse_numbers.h \
+  /usr/include/c++/9/bits/std_mutex.h \
+  /usr/include/c++/9/system_error \
+  /usr/include/x86_64-linux-gnu/c++/9/bits/error_constants.h \
+  /usr/include/c++/9/bits/unique_lock.h \
+  /usr/include/c++/9/thread \
+  /usr/include/c++/9/atomic \
   src/logger/FileLogger.h \
   /usr/include/c++/9/iostream \
   /usr/include/c++/9/ostream \
@@ -1125,8 +1173,6 @@ CMakeFiles/bulk.dir/src/main.cpp.o: src/main.cpp \
   /usr/include/c++/9/bits/ios_base.h \
   /usr/include/c++/9/bits/locale_classes.h \
   /usr/include/c++/9/bits/locale_classes.tcc \
-  /usr/include/c++/9/system_error \
-  /usr/include/x86_64-linux-gnu/c++/9/bits/error_constants.h \
   /usr/include/c++/9/streambuf \
   /usr/include/c++/9/bits/streambuf.tcc \
   /usr/include/c++/9/bits/basic_ios.h \
@@ -1160,11 +1206,17 @@ CMakeFiles/bulk.dir/src/main.cpp.o: src/main.cpp \
 
 src/logger/FileLogger.cpp:
 
+/usr/include/c++/9/thread:
+
+/usr/include/c++/9/bits/unique_lock.h:
+
+/usr/include/c++/9/bits/std_mutex.h:
+
 /usr/include/c++/9/ratio:
 
 /usr/include/c++/9/chrono:
 
-/usr/include/c++/9/thread:
+src/logger/ConsoleLogger.cpp:
 
 /usr/include/c++/9/bits/istream.tcc:
 
@@ -1194,8 +1246,6 @@ src/logger/FileLogger.cpp:
 
 /usr/include/c++/9/ios:
 
-/usr/include/c++/9/iostream:
-
 /usr/include/sched.h:
 
 /usr/include/c++/9/initializer_list:
@@ -1224,6 +1274,8 @@ src/logger/FileLogger.cpp:
 
 /usr/include/c++/9/iosfwd:
 
+/usr/include/c++/9/atomic:
+
 /usr/include/locale.h:
 
 /usr/include/x86_64-linux-gnu/c++/9/bits/gthr.h:
@@ -1243,6 +1295,8 @@ src/logger/FileLogger.cpp:
 /usr/include/c++/9/array:
 
 /usr/include/c++/9/bits/stl_vector.h:
+
+/usr/include/c++/9/condition_variable:
 
 /usr/include/c++/9/pstl/execution_defs.h:
 
@@ -1622,4 +1676,4 @@ src/command_queue/ICommandQueue.h:
 
 /usr/include/c++/9/bits/stl_stack.h:
 
-src/logger/ConsoleLogger.cpp:
+/usr/include/c++/9/iostream:

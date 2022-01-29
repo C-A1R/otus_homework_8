@@ -4,6 +4,6 @@ Maintainer: example@example.com
 Package: bulk
 Priority: optional
 Section: devel
-Version: 0.0.1
-Installed-Size: 263
+Version: 0.0.2
+Installed-Size: 327
 

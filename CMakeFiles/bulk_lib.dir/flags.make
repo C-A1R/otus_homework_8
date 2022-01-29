@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/runner/work/otus_homework_8/otus_homework_8
 
-CXX_FLAGS = -Wall -Wextra -pedantic -Werror -std=gnu++17
+CXX_FLAGS =  -pthread -Wall -Wextra -pedantic -Werror -std=gnu++17
 
