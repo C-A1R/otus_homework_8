@@ -6,8 +6,6 @@
 
 #include <ctime>
 
-#include <iostream>
-
 
 CmdQueue::CmdQueue(size_t blockSize) : _blockSize(blockSize)
 {
