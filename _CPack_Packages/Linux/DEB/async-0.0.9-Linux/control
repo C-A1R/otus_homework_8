@@ -1,0 +1,9 @@
+Architecture: amd64
+Description: async built using CMake
+Maintainer: example@example.com
+Package: async
+Priority: optional
+Section: devel
+Version: 0.0.9
+Installed-Size: 540
+

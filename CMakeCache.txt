@@ -14,14 +14,6 @@
 # EXTERNAL cache entries
 ########################
 
-//The directory containing a CMake configuration file for Boost.
-Boost_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0
-
-//Path to a file.
-Boost_INCLUDE_DIR:PATH=/usr/include
-
-Boost_UNIT_TEST_FRAMEWORK_LIBRARY_RELEASE:STRING=/usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so.1.71.0
-
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 
@@ -153,10 +145,10 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=bulk
+CMAKE_PROJECT_NAME:STATIC=async
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION:STATIC=0.0.3
+CMAKE_PROJECT_VERSION:STATIC=0.0.9
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION_MAJOR:STATIC=0
@@ -165,7 +157,7 @@ CMAKE_PROJECT_VERSION_MAJOR:STATIC=0
 CMAKE_PROJECT_VERSION_MINOR:STATIC=0
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION_PATCH:STATIC=3
+CMAKE_PROJECT_VERSION_PATCH:STATIC=9
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION_TWEAK:STATIC=
@@ -256,28 +248,20 @@ DOXYGEN_DOT_EXECUTABLE:FILEPATH=/usr/bin/dot
 //Doxygen documentation generation tool (http://www.doxygen.org)
 DOXYGEN_EXECUTABLE:FILEPATH=/usr/bin/doxygen
 
-//The directory containing a CMake configuration file for boost_headers.
-boost_headers_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0
-
-//The directory containing a CMake configuration file for boost_unit_test_framework.
-boost_unit_test_framework_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0
+//Value Computed by CMake
+async_BINARY_DIR:STATIC=/home/runner/work/otus_homework_8/otus_homework_8/src_test
 
 //Value Computed by CMake
-bulk_BINARY_DIR:STATIC=/home/runner/work/otus_homework_8/otus_homework_8
+async_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-bulk_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-bulk_SOURCE_DIR:STATIC=/home/runner/work/otus_homework_8/otus_homework_8
+async_SOURCE_DIR:STATIC=/home/runner/work/otus_homework_8/otus_homework_8/src_test
 
 
 ########################
 # INTERNAL cache entries
 ########################
 
-//ADVANCED property for variable: Boost_DIR
-Boost_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -380,7 +364,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -439,14 +423,8 @@ CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
 DOXYGEN_DOT_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: DOXYGEN_EXECUTABLE
 DOXYGEN_EXECUTABLE-ADVANCED:INTERNAL=1
-//Details about finding Boost
-FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake][cfound components: unit_test_framework ][v1.71.0()]
 //Details about finding Doxygen
 FIND_PACKAGE_MESSAGE_DETAILS_Doxygen:INTERNAL=[/usr/bin/doxygen][cfound components: doxygen dot ][v1.8.17()]
 //Patch version
-PATCH_VERSION:INTERNAL=3
-//ADVANCED property for variable: boost_headers_DIR
-boost_headers_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: boost_unit_test_framework_DIR
-boost_unit_test_framework_DIR-ADVANCED:INTERNAL=1
+PATCH_VERSION:INTERNAL=9
 

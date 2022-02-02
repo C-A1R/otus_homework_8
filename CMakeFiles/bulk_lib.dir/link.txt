@@ -1,2 +1,0 @@
-/usr/bin/ar qc libbulk_lib.a CMakeFiles/bulk_lib.dir/src/version/versionLib.cpp.o
-/usr/bin/ranlib libbulk_lib.a

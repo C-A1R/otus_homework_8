@@ -85,16 +85,6 @@ package_source:
 package_source/fast: package_source
 .PHONY : package_source/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/local/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -201,328 +191,34 @@ doc_doxygen: cmake_check_build_system
 
 # fast build rule for target.
 doc_doxygen/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/doc_doxygen.dir/build.make CMakeFiles/doc_doxygen.dir/build
+	$(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/doc_doxygen.dir/build.make src_lib/CMakeFiles/doc_doxygen.dir/build
 .PHONY : doc_doxygen/fast
 
 #=============================================================================
-# Target rules for targets named bulk
+# Target rules for targets named async
 
 # Build rule for target.
-bulk: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bulk
-.PHONY : bulk
+async: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 async
+.PHONY : async
 
 # fast build rule for target.
-bulk/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/build
-.PHONY : bulk/fast
+async/fast:
+	$(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/async.dir/build.make src_lib/CMakeFiles/async.dir/build
+.PHONY : async/fast
 
 #=============================================================================
-# Target rules for targets named bulk_lib
+# Target rules for targets named async_cli
 
 # Build rule for target.
-bulk_lib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bulk_lib
-.PHONY : bulk_lib
+async_cli: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 async_cli
+.PHONY : async_cli
 
 # fast build rule for target.
-bulk_lib/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk_lib.dir/build.make CMakeFiles/bulk_lib.dir/build
-.PHONY : bulk_lib/fast
-
-#=============================================================================
-# Target rules for targets named test_Version
-
-# Build rule for target.
-test_Version: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_Version
-.PHONY : test_Version
-
-# fast build rule for target.
-test_Version/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_Version.dir/build.make CMakeFiles/test_Version.dir/build
-.PHONY : test_Version/fast
-
-#=============================================================================
-# Target rules for targets named test_ICommand
-
-# Build rule for target.
-test_ICommand: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_ICommand
-.PHONY : test_ICommand
-
-# fast build rule for target.
-test_ICommand/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommand.dir/build.make CMakeFiles/test_ICommand.dir/build
-.PHONY : test_ICommand/fast
-
-#=============================================================================
-# Target rules for targets named test_ICommandQueue
-
-# Build rule for target.
-test_ICommandQueue: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_ICommandQueue
-.PHONY : test_ICommandQueue
-
-# fast build rule for target.
-test_ICommandQueue/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommandQueue.dir/build.make CMakeFiles/test_ICommandQueue.dir/build
-.PHONY : test_ICommandQueue/fast
-
-src/_tests/test_ICommand.o: src/_tests/test_ICommand.cpp.o
-.PHONY : src/_tests/test_ICommand.o
-
-# target to build an object file
-src/_tests/test_ICommand.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommand.dir/build.make CMakeFiles/test_ICommand.dir/src/_tests/test_ICommand.cpp.o
-.PHONY : src/_tests/test_ICommand.cpp.o
-
-src/_tests/test_ICommand.i: src/_tests/test_ICommand.cpp.i
-.PHONY : src/_tests/test_ICommand.i
-
-# target to preprocess a source file
-src/_tests/test_ICommand.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommand.dir/build.make CMakeFiles/test_ICommand.dir/src/_tests/test_ICommand.cpp.i
-.PHONY : src/_tests/test_ICommand.cpp.i
-
-src/_tests/test_ICommand.s: src/_tests/test_ICommand.cpp.s
-.PHONY : src/_tests/test_ICommand.s
-
-# target to generate assembly for a file
-src/_tests/test_ICommand.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommand.dir/build.make CMakeFiles/test_ICommand.dir/src/_tests/test_ICommand.cpp.s
-.PHONY : src/_tests/test_ICommand.cpp.s
-
-src/_tests/test_ICommandQueue.o: src/_tests/test_ICommandQueue.cpp.o
-.PHONY : src/_tests/test_ICommandQueue.o
-
-# target to build an object file
-src/_tests/test_ICommandQueue.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommandQueue.dir/build.make CMakeFiles/test_ICommandQueue.dir/src/_tests/test_ICommandQueue.cpp.o
-.PHONY : src/_tests/test_ICommandQueue.cpp.o
-
-src/_tests/test_ICommandQueue.i: src/_tests/test_ICommandQueue.cpp.i
-.PHONY : src/_tests/test_ICommandQueue.i
-
-# target to preprocess a source file
-src/_tests/test_ICommandQueue.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommandQueue.dir/build.make CMakeFiles/test_ICommandQueue.dir/src/_tests/test_ICommandQueue.cpp.i
-.PHONY : src/_tests/test_ICommandQueue.cpp.i
-
-src/_tests/test_ICommandQueue.s: src/_tests/test_ICommandQueue.cpp.s
-.PHONY : src/_tests/test_ICommandQueue.s
-
-# target to generate assembly for a file
-src/_tests/test_ICommandQueue.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommandQueue.dir/build.make CMakeFiles/test_ICommandQueue.dir/src/_tests/test_ICommandQueue.cpp.s
-.PHONY : src/_tests/test_ICommandQueue.cpp.s
-
-src/command/Cmd.o: src/command/Cmd.cpp.o
-.PHONY : src/command/Cmd.o
-
-# target to build an object file
-src/command/Cmd.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/src/command/Cmd.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommand.dir/build.make CMakeFiles/test_ICommand.dir/src/command/Cmd.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommandQueue.dir/build.make CMakeFiles/test_ICommandQueue.dir/src/command/Cmd.cpp.o
-.PHONY : src/command/Cmd.cpp.o
-
-src/command/Cmd.i: src/command/Cmd.cpp.i
-.PHONY : src/command/Cmd.i
-
-# target to preprocess a source file
-src/command/Cmd.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/src/command/Cmd.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommand.dir/build.make CMakeFiles/test_ICommand.dir/src/command/Cmd.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommandQueue.dir/build.make CMakeFiles/test_ICommandQueue.dir/src/command/Cmd.cpp.i
-.PHONY : src/command/Cmd.cpp.i
-
-src/command/Cmd.s: src/command/Cmd.cpp.s
-.PHONY : src/command/Cmd.s
-
-# target to generate assembly for a file
-src/command/Cmd.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/src/command/Cmd.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommand.dir/build.make CMakeFiles/test_ICommand.dir/src/command/Cmd.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommandQueue.dir/build.make CMakeFiles/test_ICommandQueue.dir/src/command/Cmd.cpp.s
-.PHONY : src/command/Cmd.cpp.s
-
-src/command/MacroCmd.o: src/command/MacroCmd.cpp.o
-.PHONY : src/command/MacroCmd.o
-
-# target to build an object file
-src/command/MacroCmd.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/src/command/MacroCmd.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommand.dir/build.make CMakeFiles/test_ICommand.dir/src/command/MacroCmd.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommandQueue.dir/build.make CMakeFiles/test_ICommandQueue.dir/src/command/MacroCmd.cpp.o
-.PHONY : src/command/MacroCmd.cpp.o
-
-src/command/MacroCmd.i: src/command/MacroCmd.cpp.i
-.PHONY : src/command/MacroCmd.i
-
-# target to preprocess a source file
-src/command/MacroCmd.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/src/command/MacroCmd.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommand.dir/build.make CMakeFiles/test_ICommand.dir/src/command/MacroCmd.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommandQueue.dir/build.make CMakeFiles/test_ICommandQueue.dir/src/command/MacroCmd.cpp.i
-.PHONY : src/command/MacroCmd.cpp.i
-
-src/command/MacroCmd.s: src/command/MacroCmd.cpp.s
-.PHONY : src/command/MacroCmd.s
-
-# target to generate assembly for a file
-src/command/MacroCmd.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/src/command/MacroCmd.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommand.dir/build.make CMakeFiles/test_ICommand.dir/src/command/MacroCmd.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommandQueue.dir/build.make CMakeFiles/test_ICommandQueue.dir/src/command/MacroCmd.cpp.s
-.PHONY : src/command/MacroCmd.cpp.s
-
-src/command_queue/CmdQueue.o: src/command_queue/CmdQueue.cpp.o
-.PHONY : src/command_queue/CmdQueue.o
-
-# target to build an object file
-src/command_queue/CmdQueue.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/src/command_queue/CmdQueue.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommandQueue.dir/build.make CMakeFiles/test_ICommandQueue.dir/src/command_queue/CmdQueue.cpp.o
-.PHONY : src/command_queue/CmdQueue.cpp.o
-
-src/command_queue/CmdQueue.i: src/command_queue/CmdQueue.cpp.i
-.PHONY : src/command_queue/CmdQueue.i
-
-# target to preprocess a source file
-src/command_queue/CmdQueue.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/src/command_queue/CmdQueue.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommandQueue.dir/build.make CMakeFiles/test_ICommandQueue.dir/src/command_queue/CmdQueue.cpp.i
-.PHONY : src/command_queue/CmdQueue.cpp.i
-
-src/command_queue/CmdQueue.s: src/command_queue/CmdQueue.cpp.s
-.PHONY : src/command_queue/CmdQueue.s
-
-# target to generate assembly for a file
-src/command_queue/CmdQueue.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/src/command_queue/CmdQueue.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ICommandQueue.dir/build.make CMakeFiles/test_ICommandQueue.dir/src/command_queue/CmdQueue.cpp.s
-.PHONY : src/command_queue/CmdQueue.cpp.s
-
-src/logger/ConsoleLogger.o: src/logger/ConsoleLogger.cpp.o
-.PHONY : src/logger/ConsoleLogger.o
-
-# target to build an object file
-src/logger/ConsoleLogger.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/src/logger/ConsoleLogger.cpp.o
-.PHONY : src/logger/ConsoleLogger.cpp.o
-
-src/logger/ConsoleLogger.i: src/logger/ConsoleLogger.cpp.i
-.PHONY : src/logger/ConsoleLogger.i
-
-# target to preprocess a source file
-src/logger/ConsoleLogger.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/src/logger/ConsoleLogger.cpp.i
-.PHONY : src/logger/ConsoleLogger.cpp.i
-
-src/logger/ConsoleLogger.s: src/logger/ConsoleLogger.cpp.s
-.PHONY : src/logger/ConsoleLogger.s
-
-# target to generate assembly for a file
-src/logger/ConsoleLogger.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/src/logger/ConsoleLogger.cpp.s
-.PHONY : src/logger/ConsoleLogger.cpp.s
-
-src/logger/FileLogger.o: src/logger/FileLogger.cpp.o
-.PHONY : src/logger/FileLogger.o
-
-# target to build an object file
-src/logger/FileLogger.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/src/logger/FileLogger.cpp.o
-.PHONY : src/logger/FileLogger.cpp.o
-
-src/logger/FileLogger.i: src/logger/FileLogger.cpp.i
-.PHONY : src/logger/FileLogger.i
-
-# target to preprocess a source file
-src/logger/FileLogger.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/src/logger/FileLogger.cpp.i
-.PHONY : src/logger/FileLogger.cpp.i
-
-src/logger/FileLogger.s: src/logger/FileLogger.cpp.s
-.PHONY : src/logger/FileLogger.s
-
-# target to generate assembly for a file
-src/logger/FileLogger.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/src/logger/FileLogger.cpp.s
-.PHONY : src/logger/FileLogger.cpp.s
-
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
-
-# target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
-
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
-
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
-
-src/version/test_Version.o: src/version/test_Version.cpp.o
-.PHONY : src/version/test_Version.o
-
-# target to build an object file
-src/version/test_Version.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_Version.dir/build.make CMakeFiles/test_Version.dir/src/version/test_Version.cpp.o
-.PHONY : src/version/test_Version.cpp.o
-
-src/version/test_Version.i: src/version/test_Version.cpp.i
-.PHONY : src/version/test_Version.i
-
-# target to preprocess a source file
-src/version/test_Version.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_Version.dir/build.make CMakeFiles/test_Version.dir/src/version/test_Version.cpp.i
-.PHONY : src/version/test_Version.cpp.i
-
-src/version/test_Version.s: src/version/test_Version.cpp.s
-.PHONY : src/version/test_Version.s
-
-# target to generate assembly for a file
-src/version/test_Version.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_Version.dir/build.make CMakeFiles/test_Version.dir/src/version/test_Version.cpp.s
-.PHONY : src/version/test_Version.cpp.s
-
-src/version/versionLib.o: src/version/versionLib.cpp.o
-.PHONY : src/version/versionLib.o
-
-# target to build an object file
-src/version/versionLib.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk_lib.dir/build.make CMakeFiles/bulk_lib.dir/src/version/versionLib.cpp.o
-.PHONY : src/version/versionLib.cpp.o
-
-src/version/versionLib.i: src/version/versionLib.cpp.i
-.PHONY : src/version/versionLib.i
-
-# target to preprocess a source file
-src/version/versionLib.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk_lib.dir/build.make CMakeFiles/bulk_lib.dir/src/version/versionLib.cpp.i
-.PHONY : src/version/versionLib.cpp.i
-
-src/version/versionLib.s: src/version/versionLib.cpp.s
-.PHONY : src/version/versionLib.s
-
-# target to generate assembly for a file
-src/version/versionLib.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk_lib.dir/build.make CMakeFiles/bulk_lib.dir/src/version/versionLib.cpp.s
-.PHONY : src/version/versionLib.cpp.s
+async_cli/fast:
+	$(MAKE) $(MAKESILENT) -f src_test/CMakeFiles/async_cli.dir/build.make src_test/CMakeFiles/async_cli.dir/build
+.PHONY : async_cli/fast
 
 # Help Target
 help:
@@ -538,43 +234,9 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
-	@echo "... test"
 	@echo "... doc_doxygen"
-	@echo "... bulk"
-	@echo "... bulk_lib"
-	@echo "... test_ICommand"
-	@echo "... test_ICommandQueue"
-	@echo "... test_Version"
-	@echo "... src/_tests/test_ICommand.o"
-	@echo "... src/_tests/test_ICommand.i"
-	@echo "... src/_tests/test_ICommand.s"
-	@echo "... src/_tests/test_ICommandQueue.o"
-	@echo "... src/_tests/test_ICommandQueue.i"
-	@echo "... src/_tests/test_ICommandQueue.s"
-	@echo "... src/command/Cmd.o"
-	@echo "... src/command/Cmd.i"
-	@echo "... src/command/Cmd.s"
-	@echo "... src/command/MacroCmd.o"
-	@echo "... src/command/MacroCmd.i"
-	@echo "... src/command/MacroCmd.s"
-	@echo "... src/command_queue/CmdQueue.o"
-	@echo "... src/command_queue/CmdQueue.i"
-	@echo "... src/command_queue/CmdQueue.s"
-	@echo "... src/logger/ConsoleLogger.o"
-	@echo "... src/logger/ConsoleLogger.i"
-	@echo "... src/logger/ConsoleLogger.s"
-	@echo "... src/logger/FileLogger.o"
-	@echo "... src/logger/FileLogger.i"
-	@echo "... src/logger/FileLogger.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... src/version/test_Version.o"
-	@echo "... src/version/test_Version.i"
-	@echo "... src/version/test_Version.s"
-	@echo "... src/version/versionLib.o"
-	@echo "... src/version/versionLib.i"
-	@echo "... src/version/versionLib.s"
+	@echo "... async"
+	@echo "... async_cli"
 .PHONY : help
 
 

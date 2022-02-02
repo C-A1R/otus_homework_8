@@ -1,1 +1,2 @@
-/usr/bin/bulk
+/usr/lib/libasync.so
+/usr/bin/async_cli
