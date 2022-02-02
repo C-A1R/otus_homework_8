@@ -5,9 +5,9 @@ var indexSectionsWithContent =
   2: "a",
   3: "abcfilmtv",
   4: "abcdefghimprsvw~",
-  5: "_csw",
+  5: "_crsw",
   6: "h",
-  7: "b"
+  7: "bp"
 };
 
 var indexSectionNames =

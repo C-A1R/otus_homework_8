@@ -85,6 +85,16 @@ package_source:
 package_source/fast: package_source
 .PHONY : package_source/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/local/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -209,6 +219,110 @@ async/fast:
 	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/async.dir/build.make src_lib/CMakeFiles/async.dir/build
 .PHONY : async/fast
 
+# Convenience name for target.
+src_lib/CMakeFiles/version_lib.dir/rule:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src_lib/CMakeFiles/version_lib.dir/rule
+.PHONY : src_lib/CMakeFiles/version_lib.dir/rule
+
+# Convenience name for target.
+version_lib: src_lib/CMakeFiles/version_lib.dir/rule
+.PHONY : version_lib
+
+# fast build rule for target.
+version_lib/fast:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/version_lib.dir/build.make src_lib/CMakeFiles/version_lib.dir/build
+.PHONY : version_lib/fast
+
+# Convenience name for target.
+src_lib/CMakeFiles/test_Version.dir/rule:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src_lib/CMakeFiles/test_Version.dir/rule
+.PHONY : src_lib/CMakeFiles/test_Version.dir/rule
+
+# Convenience name for target.
+test_Version: src_lib/CMakeFiles/test_Version.dir/rule
+.PHONY : test_Version
+
+# fast build rule for target.
+test_Version/fast:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_Version.dir/build.make src_lib/CMakeFiles/test_Version.dir/build
+.PHONY : test_Version/fast
+
+# Convenience name for target.
+src_lib/CMakeFiles/test_ICommand.dir/rule:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src_lib/CMakeFiles/test_ICommand.dir/rule
+.PHONY : src_lib/CMakeFiles/test_ICommand.dir/rule
+
+# Convenience name for target.
+test_ICommand: src_lib/CMakeFiles/test_ICommand.dir/rule
+.PHONY : test_ICommand
+
+# fast build rule for target.
+test_ICommand/fast:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommand.dir/build.make src_lib/CMakeFiles/test_ICommand.dir/build
+.PHONY : test_ICommand/fast
+
+# Convenience name for target.
+src_lib/CMakeFiles/test_ICommandQueue.dir/rule:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src_lib/CMakeFiles/test_ICommandQueue.dir/rule
+.PHONY : src_lib/CMakeFiles/test_ICommandQueue.dir/rule
+
+# Convenience name for target.
+test_ICommandQueue: src_lib/CMakeFiles/test_ICommandQueue.dir/rule
+.PHONY : test_ICommandQueue
+
+# fast build rule for target.
+test_ICommandQueue/fast:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommandQueue.dir/build.make src_lib/CMakeFiles/test_ICommandQueue.dir/build
+.PHONY : test_ICommandQueue/fast
+
+_tests/test_ICommand.o: _tests/test_ICommand.cpp.o
+.PHONY : _tests/test_ICommand.o
+
+# target to build an object file
+_tests/test_ICommand.cpp.o:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommand.dir/build.make src_lib/CMakeFiles/test_ICommand.dir/_tests/test_ICommand.cpp.o
+.PHONY : _tests/test_ICommand.cpp.o
+
+_tests/test_ICommand.i: _tests/test_ICommand.cpp.i
+.PHONY : _tests/test_ICommand.i
+
+# target to preprocess a source file
+_tests/test_ICommand.cpp.i:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommand.dir/build.make src_lib/CMakeFiles/test_ICommand.dir/_tests/test_ICommand.cpp.i
+.PHONY : _tests/test_ICommand.cpp.i
+
+_tests/test_ICommand.s: _tests/test_ICommand.cpp.s
+.PHONY : _tests/test_ICommand.s
+
+# target to generate assembly for a file
+_tests/test_ICommand.cpp.s:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommand.dir/build.make src_lib/CMakeFiles/test_ICommand.dir/_tests/test_ICommand.cpp.s
+.PHONY : _tests/test_ICommand.cpp.s
+
+_tests/test_ICommandQueue.o: _tests/test_ICommandQueue.cpp.o
+.PHONY : _tests/test_ICommandQueue.o
+
+# target to build an object file
+_tests/test_ICommandQueue.cpp.o:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommandQueue.dir/build.make src_lib/CMakeFiles/test_ICommandQueue.dir/_tests/test_ICommandQueue.cpp.o
+.PHONY : _tests/test_ICommandQueue.cpp.o
+
+_tests/test_ICommandQueue.i: _tests/test_ICommandQueue.cpp.i
+.PHONY : _tests/test_ICommandQueue.i
+
+# target to preprocess a source file
+_tests/test_ICommandQueue.cpp.i:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommandQueue.dir/build.make src_lib/CMakeFiles/test_ICommandQueue.dir/_tests/test_ICommandQueue.cpp.i
+.PHONY : _tests/test_ICommandQueue.cpp.i
+
+_tests/test_ICommandQueue.s: _tests/test_ICommandQueue.cpp.s
+.PHONY : _tests/test_ICommandQueue.s
+
+# target to generate assembly for a file
+_tests/test_ICommandQueue.cpp.s:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommandQueue.dir/build.make src_lib/CMakeFiles/test_ICommandQueue.dir/_tests/test_ICommandQueue.cpp.s
+.PHONY : _tests/test_ICommandQueue.cpp.s
+
 async.o: async.cpp.o
 .PHONY : async.o
 
@@ -263,6 +377,8 @@ command/Cmd.o: command/Cmd.cpp.o
 # target to build an object file
 command/Cmd.cpp.o:
 	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/async.dir/build.make src_lib/CMakeFiles/async.dir/command/Cmd.cpp.o
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommand.dir/build.make src_lib/CMakeFiles/test_ICommand.dir/command/Cmd.cpp.o
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommandQueue.dir/build.make src_lib/CMakeFiles/test_ICommandQueue.dir/command/Cmd.cpp.o
 .PHONY : command/Cmd.cpp.o
 
 command/Cmd.i: command/Cmd.cpp.i
@@ -271,6 +387,8 @@ command/Cmd.i: command/Cmd.cpp.i
 # target to preprocess a source file
 command/Cmd.cpp.i:
 	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/async.dir/build.make src_lib/CMakeFiles/async.dir/command/Cmd.cpp.i
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommand.dir/build.make src_lib/CMakeFiles/test_ICommand.dir/command/Cmd.cpp.i
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommandQueue.dir/build.make src_lib/CMakeFiles/test_ICommandQueue.dir/command/Cmd.cpp.i
 .PHONY : command/Cmd.cpp.i
 
 command/Cmd.s: command/Cmd.cpp.s
@@ -279,6 +397,8 @@ command/Cmd.s: command/Cmd.cpp.s
 # target to generate assembly for a file
 command/Cmd.cpp.s:
 	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/async.dir/build.make src_lib/CMakeFiles/async.dir/command/Cmd.cpp.s
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommand.dir/build.make src_lib/CMakeFiles/test_ICommand.dir/command/Cmd.cpp.s
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommandQueue.dir/build.make src_lib/CMakeFiles/test_ICommandQueue.dir/command/Cmd.cpp.s
 .PHONY : command/Cmd.cpp.s
 
 command/MacroCmd.o: command/MacroCmd.cpp.o
@@ -287,6 +407,8 @@ command/MacroCmd.o: command/MacroCmd.cpp.o
 # target to build an object file
 command/MacroCmd.cpp.o:
 	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/async.dir/build.make src_lib/CMakeFiles/async.dir/command/MacroCmd.cpp.o
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommand.dir/build.make src_lib/CMakeFiles/test_ICommand.dir/command/MacroCmd.cpp.o
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommandQueue.dir/build.make src_lib/CMakeFiles/test_ICommandQueue.dir/command/MacroCmd.cpp.o
 .PHONY : command/MacroCmd.cpp.o
 
 command/MacroCmd.i: command/MacroCmd.cpp.i
@@ -295,6 +417,8 @@ command/MacroCmd.i: command/MacroCmd.cpp.i
 # target to preprocess a source file
 command/MacroCmd.cpp.i:
 	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/async.dir/build.make src_lib/CMakeFiles/async.dir/command/MacroCmd.cpp.i
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommand.dir/build.make src_lib/CMakeFiles/test_ICommand.dir/command/MacroCmd.cpp.i
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommandQueue.dir/build.make src_lib/CMakeFiles/test_ICommandQueue.dir/command/MacroCmd.cpp.i
 .PHONY : command/MacroCmd.cpp.i
 
 command/MacroCmd.s: command/MacroCmd.cpp.s
@@ -303,6 +427,8 @@ command/MacroCmd.s: command/MacroCmd.cpp.s
 # target to generate assembly for a file
 command/MacroCmd.cpp.s:
 	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/async.dir/build.make src_lib/CMakeFiles/async.dir/command/MacroCmd.cpp.s
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommand.dir/build.make src_lib/CMakeFiles/test_ICommand.dir/command/MacroCmd.cpp.s
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommandQueue.dir/build.make src_lib/CMakeFiles/test_ICommandQueue.dir/command/MacroCmd.cpp.s
 .PHONY : command/MacroCmd.cpp.s
 
 command_queue/CmdQueue.o: command_queue/CmdQueue.cpp.o
@@ -311,6 +437,7 @@ command_queue/CmdQueue.o: command_queue/CmdQueue.cpp.o
 # target to build an object file
 command_queue/CmdQueue.cpp.o:
 	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/async.dir/build.make src_lib/CMakeFiles/async.dir/command_queue/CmdQueue.cpp.o
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommandQueue.dir/build.make src_lib/CMakeFiles/test_ICommandQueue.dir/command_queue/CmdQueue.cpp.o
 .PHONY : command_queue/CmdQueue.cpp.o
 
 command_queue/CmdQueue.i: command_queue/CmdQueue.cpp.i
@@ -319,6 +446,7 @@ command_queue/CmdQueue.i: command_queue/CmdQueue.cpp.i
 # target to preprocess a source file
 command_queue/CmdQueue.cpp.i:
 	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/async.dir/build.make src_lib/CMakeFiles/async.dir/command_queue/CmdQueue.cpp.i
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommandQueue.dir/build.make src_lib/CMakeFiles/test_ICommandQueue.dir/command_queue/CmdQueue.cpp.i
 .PHONY : command_queue/CmdQueue.cpp.i
 
 command_queue/CmdQueue.s: command_queue/CmdQueue.cpp.s
@@ -327,6 +455,7 @@ command_queue/CmdQueue.s: command_queue/CmdQueue.cpp.s
 # target to generate assembly for a file
 command_queue/CmdQueue.cpp.s:
 	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/async.dir/build.make src_lib/CMakeFiles/async.dir/command_queue/CmdQueue.cpp.s
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_ICommandQueue.dir/build.make src_lib/CMakeFiles/test_ICommandQueue.dir/command_queue/CmdQueue.cpp.s
 .PHONY : command_queue/CmdQueue.cpp.s
 
 logger/ConsoleLogger.o: logger/ConsoleLogger.cpp.o
@@ -377,6 +506,54 @@ logger/FileLogger.cpp.s:
 	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/async.dir/build.make src_lib/CMakeFiles/async.dir/logger/FileLogger.cpp.s
 .PHONY : logger/FileLogger.cpp.s
 
+version/test_Version.o: version/test_Version.cpp.o
+.PHONY : version/test_Version.o
+
+# target to build an object file
+version/test_Version.cpp.o:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_Version.dir/build.make src_lib/CMakeFiles/test_Version.dir/version/test_Version.cpp.o
+.PHONY : version/test_Version.cpp.o
+
+version/test_Version.i: version/test_Version.cpp.i
+.PHONY : version/test_Version.i
+
+# target to preprocess a source file
+version/test_Version.cpp.i:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_Version.dir/build.make src_lib/CMakeFiles/test_Version.dir/version/test_Version.cpp.i
+.PHONY : version/test_Version.cpp.i
+
+version/test_Version.s: version/test_Version.cpp.s
+.PHONY : version/test_Version.s
+
+# target to generate assembly for a file
+version/test_Version.cpp.s:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/test_Version.dir/build.make src_lib/CMakeFiles/test_Version.dir/version/test_Version.cpp.s
+.PHONY : version/test_Version.cpp.s
+
+version/versionLib.o: version/versionLib.cpp.o
+.PHONY : version/versionLib.o
+
+# target to build an object file
+version/versionLib.cpp.o:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/version_lib.dir/build.make src_lib/CMakeFiles/version_lib.dir/version/versionLib.cpp.o
+.PHONY : version/versionLib.cpp.o
+
+version/versionLib.i: version/versionLib.cpp.i
+.PHONY : version/versionLib.i
+
+# target to preprocess a source file
+version/versionLib.cpp.i:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/version_lib.dir/build.make src_lib/CMakeFiles/version_lib.dir/version/versionLib.cpp.i
+.PHONY : version/versionLib.cpp.i
+
+version/versionLib.s: version/versionLib.cpp.s
+.PHONY : version/versionLib.s
+
+# target to generate assembly for a file
+version/versionLib.cpp.s:
+	cd /home/runner/work/otus_homework_8/otus_homework_8 && $(MAKE) $(MAKESILENT) -f src_lib/CMakeFiles/version_lib.dir/build.make src_lib/CMakeFiles/version_lib.dir/version/versionLib.cpp.s
+.PHONY : version/versionLib.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -391,8 +568,19 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... doc_doxygen"
 	@echo "... async"
+	@echo "... test_ICommand"
+	@echo "... test_ICommandQueue"
+	@echo "... test_Version"
+	@echo "... version_lib"
+	@echo "... _tests/test_ICommand.o"
+	@echo "... _tests/test_ICommand.i"
+	@echo "... _tests/test_ICommand.s"
+	@echo "... _tests/test_ICommandQueue.o"
+	@echo "... _tests/test_ICommandQueue.i"
+	@echo "... _tests/test_ICommandQueue.s"
 	@echo "... async.o"
 	@echo "... async.i"
 	@echo "... async.s"
@@ -414,6 +602,12 @@ help:
 	@echo "... logger/FileLogger.o"
 	@echo "... logger/FileLogger.i"
 	@echo "... logger/FileLogger.s"
+	@echo "... version/test_Version.o"
+	@echo "... version/test_Version.i"
+	@echo "... version/test_Version.s"
+	@echo "... version/versionLib.o"
+	@echo "... version/versionLib.i"
+	@echo "... version/versionLib.s"
 .PHONY : help
 
 

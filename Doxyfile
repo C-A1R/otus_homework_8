@@ -3,7 +3,7 @@ INPUT                  = /home/runner/work/otus_homework_8/otus_homework_8/src_l
 
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = async
-PROJECT_NUMBER         = 0.0.10
+PROJECT_NUMBER         = 0.0.11
 PROJECT_BRIEF          = "Пакетная обработка команд"
 
 GENERATE_HTML          = YES
