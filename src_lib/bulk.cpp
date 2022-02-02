@@ -60,6 +60,10 @@ BulkCommander::Bulk *BulkCommander::createNewBulk(const size_t size)
 
 void BulkCommander::push(async::handle_t handle, const char *data, std::size_t size) 
 {
+    if (!handle)
+    {
+        return;
+    }
     auto i = _bulks.find(reinterpret_cast<Bulk *>(handle));
     if (i == _bulks.cend())
     {
@@ -84,6 +88,10 @@ void BulkCommander::push(async::handle_t handle, const char *data, std::size_t s
 
 void BulkCommander::removeBulk(async::handle_t handle)
 {
+    if (!handle)
+    {
+        return;
+    }
     auto i = _bulks.find(reinterpret_cast<Bulk *>(handle));
     if (i == _bulks.cend())
     {
