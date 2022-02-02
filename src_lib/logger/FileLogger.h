@@ -9,6 +9,9 @@
 #include <atomic>
 
 
+/**
+ * @brief Логгер, который пишет в файл
+ */
 class FileLogger : public ILogger
 {
     std::condition_variable _cv;
@@ -17,6 +20,7 @@ class FileLogger : public ILogger
     std::thread _thread_1;
     std::thread _thread_2;
     std::atomic<bool> _stoped {false};
+    std::atomic<int> _count {0};
 
 public:
     FileLogger();

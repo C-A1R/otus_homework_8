@@ -2,6 +2,9 @@
 #define CMDQUEUE_H
 
 #include "ICommandQueue.h"
+#include "../command/Cmd.h"
+#include "../command/MacroCmd.h"
+#include "../logger/ILogger.h"
 
 #include <queue>
 #include <stack>

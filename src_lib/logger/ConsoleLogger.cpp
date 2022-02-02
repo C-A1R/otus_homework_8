@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+
 ConsoleLogger::ConsoleLogger()
 {
     _thread = std::thread(&ConsoleLogger::worker, this);
@@ -28,6 +29,8 @@ void ConsoleLogger::worker()
 {
     auto printNext = [this]()
     {
+        if (_logs.empty())
+            return;
         std::cout << _logs.front() << std::endl;
         _logs.pop();
     };
@@ -35,7 +38,10 @@ void ConsoleLogger::worker()
     while (!_stoped)
     {
         std::unique_lock<std::mutex> lock(_mtx);
-        _cv.wait(lock, [this]() { return !_logs.empty(); });
+        while (!_stoped && _logs.empty())
+        {
+            _cv.wait(lock);
+        }
         if (_stoped)
         {
             break;

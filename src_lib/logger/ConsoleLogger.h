@@ -9,6 +9,9 @@
 #include <atomic>
 
 
+/**
+ * @brief Логгер, который пишет в консоль
+ */
 class ConsoleLogger : public ILogger
 {
     std::condition_variable _cv;

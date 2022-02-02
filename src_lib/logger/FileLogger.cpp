@@ -32,7 +32,10 @@ void FileLogger::worker()
     while (!_stoped)
     {
         std::unique_lock<std::mutex> lock(_mtx);
-        _cv.wait(lock, [this](){ return !_logs.empty(); });
+        while (!_stoped && _logs.empty())
+        {
+            _cv.wait(lock);
+        }
         if (_stoped)
         {
             break;
@@ -57,8 +60,8 @@ void FileLogger::printNext()
     std::stringstream ss;
     ss << std::this_thread::get_id();
 
-    std::string filename = "bulk" + std::to_string(pair.first) + "_"
-                                  + ss.str() + ".log";
+    std::string filename = "bulk" + std::to_string(pair.first) + " " + std::to_string(++_count)
+                                  + " thread-" + ss.str() + ".log";
     if (filename.empty() || pair.second.empty())
     {
         return;
